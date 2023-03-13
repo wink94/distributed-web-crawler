@@ -91,26 +91,26 @@ This module contains functions to crawl a given URL and extract text content fro
 
 ## health_monitor.py
 
-The health_monitor.py module contains a function to periodically check the health of multiple nodes in a distributed system. The function uses the requests module to send a GET request to the /health endpoint of each node in the system. If a node responds with a status code other than 200, it is added to a list of nodes to retry. Nodes in the retry list are retried three times using the node_retry() function from the util module. The function is scheduled to run every 10 seconds using the schedule module, and the number of nodes to check is provided as a command-line argument.
+The `health_monitor.py` module contains a function to periodically check the health of multiple nodes in a distributed system. The function uses the `requests` module to send a GET request to the `/health` endpoint of each node in the system. If a node responds with a status code other than 200, it is added to a list of nodes to retry. Nodes in the retry list are retried three times using the `node_retry()` function from the `util` module. The function is `scheduled` to run every 10 seconds using the schedule module, and the number of nodes to check is provided as a command-line argument.
 
 ### Functions
-- periodic_healthcheck(node_count): This function takes in the number of nodes in the system and periodically checks the health of each node. It first generates a list of URLs to check using the make_urls() function from the generate_urls module. Then, it iterates over the list of URLs and sends a GET request to the /health endpoint of each node using the requests module. If a node responds with a status code other than 200, it is added to a list of nodes to retry. Nodes in the retry list are retried three times using the node_retry() function from the util module. The function is scheduled to run every 10 seconds using the schedule module.
-- __main__(): This function parses the command-line argument for the number of nodes in the system, and schedules the periodic_healthcheck() function to run every 10 seconds using the schedule module. If an error occurs, it prints an error message and exits the program.
+- `periodic_healthcheck(node_count)`: This function takes in the number of nodes in the system and periodically checks the health of each node. It first generates a list of URLs to check using the `make_urls()` function from the `generate_urls` module. Then, it iterates over the list of URLs and sends a GET request to the `/health` endpoint of each node using the `requests` module. If a node responds with a status code other than 200, it is added to a list of nodes to retry. Nodes in the retry list are retried three times using the `node_retry()` function from the `util` module. The function is scheduled to run every 10 seconds using the `schedule` module.
+- `__main__()`: This function parses the command-line argument for the number of nodes in the system, and schedules the `periodic_healthcheck()` function to run every 10 seconds using the `schedule` module. If an error occurs, it prints an error message and exits the program.
 
 ## make_graph_function.py
 This module contains functions to generate a graph visualization from a given adjacency list.
 
 ### Functions
-make_graph_from_adjacency_list(data): This function takes in an adjacency list in the form of a JSON dictionary, filters out redundancies, and generates a graph visualization using Plotly. The function converts the data into graph elements and creates a list of edges. It then uses Plotly to create a visualization of the graph. The resulting graph is not returned, but rather displayed in the web browser.
+- `make_graph_from_adjacency_list(data)`: This function takes in an adjacency list in the form of a JSON dictionary, filters out redundancies, and generates a graph visualization using Plotly. The function converts the data into graph elements and creates a list of edges. It then uses Plotly to create a visualization of the graph. The resulting graph is not returned, but rather displayed in the web browser.
 
 ## util.py
 The util.py file contains utility functions for starting nodes and retrying failed nodes. 
 
 ### Functions
-start_all_nodes(n): This function takes in an integer n and starts n nodes by running the node.py script in separate terminal windows using subprocess.Popen(). Each node is started on a different port number, starting from 5000.
+- `start_all_nodes(n)`: This function takes in an integer n and starts n nodes by running the `node.py` script in separate terminal windows using `subprocess.Popen()`. Each node is started on a different port number, starting from 5000.
 
-start_a_nodes(n,num_nodes): This function takes in an integer n and the total number of nodes num_nodes. It starts a single node on port number 5000+n by running the node.py script using subprocess.Popen().
+- `start_a_nodes(n,num_nodes)`: This function takes in an integer n and the total number of nodes `num_nodes`. It starts a single node on port number `5000+n` by running the `node.py` script using `subprocess.Popen()`.
 
-start_health_monitor(num_nodes): This function takes in the total number of nodes num_nodes and starts the health monitor by running the health_monitor.py script in a separate terminal window using subprocess.Popen().
+- `start_health_monitor(num_nodes)`: This function takes in the total number of nodes `num_nodes` and starts the health monitor by running the `health_monitor.py` script in a separate terminal window using `subprocess.Popen()`.
 
-node_retry(tries,node,num_nodes): This function takes in the number of tries to retry, the failed node number, and the total number of nodes num_nodes. It retries starting the failed node by running the node.py script using subprocess.Popen(). It tries up to tries times before giving up. If the retry is successful, the function returns, otherwise it recursively calls itself with tries decremented by 1.
+- `node_retry(tries,node,num_nodes)`: This function takes in the number of `tries` to retry, the failed `node` number, and the total number of nodes `num_nodes`. It retries starting the failed node by running the node.py script using `subprocess.Popen()`. It tries up to tries times before giving up. If the retry is successful, the function returns, otherwise it recursively calls itself with `tries` decremented by 1.
