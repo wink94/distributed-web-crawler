@@ -27,7 +27,7 @@ def node_retry(tries,node,num_nodes):
     
     try:
         port = 5000+node
-        subprocess.Popen(["python", "code/node.py",str(port),str(num_nodes)]) 
+        subprocess.Popen(['gnome-terminal', '-x',"python", "code/node.py",str(port),str(num_nodes)]) 
 
     except Exception as e: 
         print(e)
