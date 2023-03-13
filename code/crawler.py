@@ -13,7 +13,7 @@ def validate_url(url):
 		return False
 
 def hard_disk_store(text, url):
-	name = "src/storage/" + url.replace('/', '') + ".txt" 
+	name = "code/storage/" + url.replace('/', '') + ".txt" 
 	print("html stored in ", name)
 	file = open(name,"w+")
 	file.write(text)
