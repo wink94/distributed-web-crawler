@@ -76,6 +76,38 @@ If the user enters `show_html`, the code prompts the user to enter a website. It
 
 If the user enters "exit", the program exits. If the user enters an invalid command, the program prompts the user to enter a valid command.
 
+## node.py
+
+This is the node.py file, which is a Python Flask application that serves as a node in a distributed web crawler system. The node exposes several REST endpoints that allow other nodes to initiate crawls and receive the results of previous crawls.
+
+### Endpoints
+
+- /check: Returns the HTML content of all the websites in the system except the current website.
+- /: Returns the current website.
+- /health: Returns the status of the node.
+- /crawl: Initiates a crawl of a given website and stores the results in a table. It also sends out further crawls for each child URL found during the initial crawl.
+- /make_graph: Generates a graph of the websites in the system based on the child URLs discovered during previous crawls.
+
+### Variables
+- URLS: A list of URLs for each node in the system.
+- number_of_ports: The number of ports available on each node.
+- number_of_nodes: The total number of nodes in the system.
+- limiter: The maximum number of child URLs to be stored for each parent URL.
+- child_adjacency: A dictionary that stores the child URLs and their associated workers for each parent URL in the system.
+
+### Functions
+- crawl(website): This function takes in a website and initiates a crawl of it. It returns a list of child URLs found during the crawl.
+- make_urls(number_of_nodes): This function takes in the number of nodes and generates a list of URLs for each node.
+- get_random_url(URLS): This function takes in a list of URLs and returns a random URL from the list.
+
+The node.py file uses the Flask library to define a web application. The /check, /, and /health endpoints simply return the current website or the HTML content of the other websites in the system. The /crawl endpoint initiates a crawl of a given website and sends out further crawls for each child URL discovered during the initial crawl. The /make_graph endpoint generates a graph of the websites in the system based on the child URLs discovered during previous crawls.
+
+The crawl(website) function initiates a crawl of a given website using the crawl() function from the crawler module. It then returns a list of child URLs found during the crawl.
+
+The make_urls(number_of_nodes) function generates a list of URLs for each node in the system. It takes in the total number of nodes and returns a list of URLs in the format "http://localhost:{port}".
+
+The get_random_url(URLS) function takes in a list of URLs and returns a random URL from the list. It is used to select a worker node for each child URL found during a crawl.
+
 ## content.py
 This module contains a function to check if a file exists and print its HTML content.
 ### Functions
@@ -119,3 +151,17 @@ The util.py file contains utility functions for starting nodes and retrying fail
 The `storage/` directory is where the scraped data is stored. The `crawler.py` module stores the HTML content of each page it crawls in a file within the `storage/` directory. The name of the file is based on the URL of the page being crawled.
 
 It is important to note that the storage directory should not be directly accessed by any other module of the project. The storage files are only accessed by the `crawler.py` module and should be accessed through the `content.py` module.
+
+## generate_urls.py
+This module generates a list of URLs for the crawler to use.
+
+### Functions
+`generate_urls(port)`: This function takes in a port number and generates a list of URLs based on that port number. It uses the validators library to ensure that the URLs are valid.
+
+## crawler.py
+This module contains functions to crawl a given URL and extract text content from its HTML.
+### Functions
+- validate_url(url): This function takes in a URL and returns True if the URL is valid and False otherwise.
+- extract_text(html): This function takes in an HTML string and extracts the title and text content from it.
+- hard_disk_store(html, url): This function takes in an HTML string and a URL, and stores the HTML content on disk with a filename based on the URL.
+- crawl(url): This function takes in a URL, crawls the website, and returns a list of child URLs. It first checks if the URL is valid using validate_url(). Then, it requests the page using the requests library, and extracts the HTML content using the extract_text() function. The HTML content is then stored on disk using hard_disk_store(). Finally, the function uses beautifulsoup4 to parse the HTML and extract all child URLs, which are returned as a list.
