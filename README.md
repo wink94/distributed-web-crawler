@@ -114,3 +114,14 @@ The util.py file contains utility functions for starting nodes and retrying fail
 - `start_health_monitor(num_nodes)`: This function takes in the total number of nodes `num_nodes` and starts the health monitor by running the `health_monitor.py` script in a separate terminal window using `subprocess.Popen()`.
 
 - `node_retry(tries,node,num_nodes)`: This function takes in the number of `tries` to retry, the failed `node` number, and the total number of nodes `num_nodes`. It retries starting the failed node by running the `node.py` script using `subprocess.Popen()`. It tries up to `tries` times before giving up. If the retry is successful, the function returns, otherwise it recursively calls itself with `tries` decremented by 1.
+
+## content.py
+This module contains functions to read the content of files stored in the `storage/` directory. The functions should be used to read the content of files stored in the `storage/` directory, as they handle file access errors and return useful messages to the user.
+### Functions
+- `read_content_from_file(url)`: This function takes in a URL, reads the content of the file associated with that URL in the `storage/` directory and returns the content as a string. If the file does not exist, the function returns a message indicating that the file could not be found.
+- `check_if_file_exists(url)`: This function takes in a URL, checks if the file associated with that URL exists in the `storage/` directory, and returns True if the file exists and False otherwise.
+
+## storage/
+The `storage/` directory is where the scraped data is stored. The `crawler.py` module stores the HTML content of each page it crawls in a file within the `storage/` directory. The name of the file is based on the URL of the page being crawled.
+
+It is important to note that the storage directory should not be directly accessed by any other module of the project. The storage files are only accessed by the `crawler.py` module and should be accessed through the `content.py` module.
