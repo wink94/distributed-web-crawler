@@ -165,14 +165,6 @@ This module generates a list of URLs for the crawler to use.
 ### Functions
 `generate_urls(port)`: This function takes in a port number and generates a list of URLs based on that port number. It uses the validators library to ensure that the URLs are valid.
 
-## crawler.py
-This module contains functions to crawl a given URL and extract text content from its HTML.
-### Functions
-- `validate_url(url)`: This function takes in a URL and returns True if the URL is valid and False otherwise.
-- `extract_text(html)`: This function takes in an HTML string and extracts the title and text content from it.
-- `hard_disk_store(html, url)`: This function takes in an HTML string and a URL, and stores the HTML content on disk with a filename based on the URL.
-- `crawl(url)`: This function takes in a URL, crawls the website, and returns a list of child URLs. It first checks if the URL is valid using `validate_url()`. Then, it requests the page using the requests library, and extracts the HTML content using the `extract_text()` function. The HTML content is then stored on disk using `hard_disk_store()`. Finally, the function uses beautifulsoup4 to parse the HTML and extract all child URLs, which are returned as a list.
-
 ## Conclusion
 This project involved building a distributed web crawler using Python, Flask, and Requests. The main goal of the project was to create a system that can crawl multiple websites in parallel, distribute the workload across multiple nodes, and generate a graph representation of the website structure.
 
