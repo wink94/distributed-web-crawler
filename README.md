@@ -7,7 +7,7 @@ The Distributed Web Crawler is a Python project that allows users to crawl and s
 `Kavindu Ravishan`<br />
 `Windula Kularatne`
 
-Previously, there were three members in the subject, but one member dropped out at the beginning.
+There were three members in the group, but one member dropped out at the beginning.
 
 ## Project Structure:
 
@@ -89,31 +89,31 @@ This is the node.py file, which is a Python Flask application that serves as a n
 
 ### Endpoints
 
-- /check: Returns the HTML content of all the websites in the system except the current website.
-- /: Returns the current website.
-- /health: Returns the status of the node.
-- /crawl: Initiates a crawl of a given website and stores the results in a table. It also sends out further crawls for each child URL found during the initial crawl.
-- /make_graph: Generates a graph of the websites in the system based on the child URLs discovered during previous crawls.
+- `/check`: Returns the HTML content of all the websites in the system except the current website.
+- `/`: Returns the current website.
+- `/health`: Returns the status of the node.
+- `/crawl`: Initiates a crawl of a given website and stores the results in a table. It also sends out further crawls for each child URL found during the initial crawl.
+- `/make_graph`: Generates a graph of the websites in the system based on the child URLs discovered during previous crawls.
 
 ### Variables
-- URLS: A list of URLs for each node in the system.
-- number_of_ports: The number of ports available on each node.
-- number_of_nodes: The total number of nodes in the system.
-- limiter: The maximum number of child URLs to be stored for each parent URL.
-- child_adjacency: A dictionary that stores the child URLs and their associated workers for each parent URL in the system.
+- `URLS`: A list of URLs for each node in the system.
+- `number_of_ports`: The number of ports available on each node.
+- `number_of_nodes`: The total number of nodes in the system.
+- `limiter`: The maximum number of child URLs to be stored for each parent URL.
+- `child_adjacency`: A dictionary that stores the child URLs and their associated workers for each parent URL in the system.
 
 ### Functions
-- crawl(website): This function takes in a website and initiates a crawl of it. It returns a list of child URLs found during the crawl.
-- make_urls(number_of_nodes): This function takes in the number of nodes and generates a list of URLs for each node.
-- get_random_url(URLS): This function takes in a list of URLs and returns a random URL from the list.
+- `crawl(website)`: This function takes in a website and initiates a crawl of it. It returns a list of child URLs found during the crawl.
+- `make_urls(number_of_nodes)`: This function takes in the number of nodes and generates a list of URLs for each node.
+- `get_random_url(URLS)`: This function takes in a list of URLs and returns a random URL from the list.
 
-The node.py file uses the Flask library to define a web application. The /check, /, and /health endpoints simply return the current website or the HTML content of the other websites in the system. The /crawl endpoint initiates a crawl of a given website and sends out further crawls for each child URL discovered during the initial crawl. The /make_graph endpoint generates a graph of the websites in the system based on the child URLs discovered during previous crawls.
+The `node.py` file uses the Flask library to define a web application. The `/check`, `/`, and `/health` endpoints simply return the current website or the HTML content of the other websites in the system. The `/crawl` endpoint initiates a crawl of a given website and sends out further crawls for each child URL discovered during the initial crawl. The `/make_graph` endpoint generates a graph of the websites in the system based on the child URLs discovered during previous crawls.
 
-The crawl(website) function initiates a crawl of a given website using the crawl() function from the crawler module. It then returns a list of child URLs found during the crawl.
+The `crawl(website)` function initiates a crawl of a given website using the `crawl()` function from the crawler module. It then returns a list of child URLs found during the crawl.
 
-The make_urls(number_of_nodes) function generates a list of URLs for each node in the system. It takes in the total number of nodes and returns a list of URLs in the format "http://localhost:{port}".
+The `make_urls(number_of_nodes)` function generates a list of URLs for each node in the system. It takes in the total number of nodes and returns a list of URLs in the format http://localhost:{port}.
 
-The get_random_url(URLS) function takes in a list of URLs and returns a random URL from the list. It is used to select a worker node for each child URL found during a crawl.
+The `get_random_url(URLS)` function takes in a list of URLs and returns a random URL from the list. It is used to select a worker node for each child URL found during a crawl.
 
 ## content.py
 This module contains a function to check if a file exists and print its HTML content.
