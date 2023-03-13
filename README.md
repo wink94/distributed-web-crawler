@@ -1,6 +1,6 @@
 # Distributed Web Crawler
 
-The Distributed Web Crawler is a Python project that allows users to crawl and scrape websites. The project is distributed across multiple nodes, each running on a separate port, and utilizes Flask to serve as the endpoint for the scraper and crawler. The project allows users to specify a website and the number of levels of child pages to crawl, with each node taking on a portion of the crawling workload. Additionally, the project includes functionality to create a graph of the website and its child pages, and to check the health of each node in the network. Overall, the project provides a distributed solution for web scraping and crawling, allowing for efficient and scalable data collection.
+The Distributed Web Crawler is a Python project that allows users to crawl and scrape websites. The project is distributed across multiple nodes, each running on a separate port, and utilizes Flask to serve as the endpoint for the scraper and crawler. The project allows users to specify a website and the number of levels of child pages to crawl, with each node taking on a portion of the crawling workload. Additionally, the project includes functionality to create a graph of the website and its child pages, and to check the health of each node in the network. The project provides a distributed solution for web scraping and crawling, allowing for efficient and scalable data collection.
 
 `Group O`
 
