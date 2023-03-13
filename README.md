@@ -165,3 +165,10 @@ This module contains functions to crawl a given URL and extract text content fro
 - extract_text(html): This function takes in an HTML string and extracts the title and text content from it.
 - hard_disk_store(html, url): This function takes in an HTML string and a URL, and stores the HTML content on disk with a filename based on the URL.
 - crawl(url): This function takes in a URL, crawls the website, and returns a list of child URLs. It first checks if the URL is valid using validate_url(). Then, it requests the page using the requests library, and extracts the HTML content using the extract_text() function. The HTML content is then stored on disk using hard_disk_store(). Finally, the function uses beautifulsoup4 to parse the HTML and extract all child URLs, which are returned as a list.
+
+## Conclusion
+This project involved building a distributed web crawler using Python, Flask, and Requests. The main goal of the project was to create a system that can crawl multiple websites in parallel, distribute the workload across multiple nodes, and generate a graph representation of the website structure.
+
+To achieve this, we created a set of Flask endpoints that can receive requests for crawling, health checks, and graph generation. We also implemented a load-balancing system that can assign crawling tasks to worker nodes in a round-robin fashion. Finally, we used a data structure to keep track of the website structure and used it to generate the graph representation.
+
+This project was a great learning experience for understanding the basics of distributed systems, network programming, and load balancing. It provided insights into how to design and implement a scalable and fault-tolerant system that can handle large amounts of data and traffic.
