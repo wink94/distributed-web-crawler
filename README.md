@@ -113,4 +113,4 @@ The util.py file contains utility functions for starting nodes and retrying fail
 
 - `start_health_monitor(num_nodes)`: This function takes in the total number of nodes `num_nodes` and starts the health monitor by running the `health_monitor.py` script in a separate terminal window using `subprocess.Popen()`.
 
-- `node_retry(tries,node,num_nodes)`: This function takes in the number of `tries` to retry, the failed `node` number, and the total number of nodes `num_nodes`. It retries starting the failed node by running the node.py script using `subprocess.Popen()`. It tries up to tries times before giving up. If the retry is successful, the function returns, otherwise it recursively calls itself with `tries` decremented by 1.
+- `node_retry(tries,node,num_nodes)`: This function takes in the number of `tries` to retry, the failed `node` number, and the total number of nodes `num_nodes`. It retries starting the failed node by running the `node.py` script using `subprocess.Popen()`. It tries up to `tries` times before giving up. If the retry is successful, the function returns, otherwise it recursively calls itself with `tries` decremented by 1.
