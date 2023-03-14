@@ -51,13 +51,15 @@ You can install these packages by running the following command:
 
 ## How to Run:
 
-To run the distributed web crawler, you need to run the app.py file. The program will automatically start the necessary number of instances of the node.py file and the Prometheus server.
+To run the distributed web crawler, you need to run the main.py file. The program will automatically start the necessary number of instances of the node.py file and the Prometheus server.
 
 To run the program, open a terminal window, navigate to the project directory, and run the following command:
-
-`python app.py
+<br />
+`Remeber to be in top level and not in code directory`
+<br />
+`python code/main.py
 `
-<br /><br />
+<br />
 
 ## main.py
 This is the main module of the project which serves as the entry point to the application. It contains a loop that waits for user input to either crawl, make a graph, show html, or exit the program.
