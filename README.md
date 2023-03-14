@@ -14,10 +14,6 @@ There were three members in the group, but one member dropped out at the beginni
 
 <br />
 ## Project Structure:
-
-<br />
-## Project Structure
-<br />
 ├── main.py<br />
 ├── content.py<br />
 ├── crawler.py<br />
