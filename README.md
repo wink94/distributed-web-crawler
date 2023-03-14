@@ -45,8 +45,7 @@ Before running the application, you need to have the all packages installed. Mos
 - `flask`
 
 You can install these packages by running the following command:
-`pip install -r requirements.txt
-`
+`pip install -r requirements.txt`
 <br />Make sure to run this command in the project directory, where the requirements.txt file is located. This will install all the necessary packages for running the application.
 
 ## How to Run:
@@ -57,8 +56,7 @@ To run the program, open a terminal window, navigate to the project directory, a
 <br />
 
 <br />
-`python code/main.py
-`
+`python code/main.py`
 <br />
 
 ## main.py
