@@ -10,7 +10,8 @@ The Distributed Web Crawler is a Python project that allows users to crawl and s
 There were three members in the group, but one member dropped out at the beginning.
 
 ## Project Structure:
-
+<br />
+code
 ├── main.py<br />
 ├── content.py<br />
 ├── crawler.py<br />
@@ -18,10 +19,8 @@ There were three members in the group, but one member dropped out at the beginni
 ├── health_monitor.py<br />
 ├── make_graph_function.py<br />
 ├── node.py<br />
-├── README.md<br />
 ├── storage/<br />
-├── util.py<br />
-└── requirements.txt<br />
+└── util.py<br />
 
 
 `main.py`: The main script for the project and this work as master node. This script allows the user to interact with the command-line interface and choose between scraping or crawling.<br />
@@ -53,9 +52,9 @@ You can install these packages by running the following command:
 
 To run the distributed web crawler, you need to run the main.py file. The program will automatically start the necessary number of instances of the node.py file and the Prometheus server.
 
-To run the program, open a terminal window, navigate to the project directory, and run the following command:
+To run the program, open a terminal window, navigate to the project directory, and run the following command (`Remeber to be in top level and not in code directory`):
 <br />
-`Remeber to be in top level and not in code directory`
+
 <br />
 `python code/main.py
 `
