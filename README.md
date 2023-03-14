@@ -8,7 +8,7 @@ The Distributed Web Crawler is a Python project that allows users to crawl and s
 `Group O`
 
 `Kavindu Ravishan - Kavindu.Magalage@student.oulu.fi - 2208084`<br />
-`Windula Kularatne - Windula.Kularatne@student.oulu.fi - 2207604`
+`Windula Kularatne - Windula.Kularatne@student.oulu.fi - 2207601`
 
 There were three members in the group, but one member dropped out at the beginning.
 
