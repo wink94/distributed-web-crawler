@@ -12,6 +12,7 @@ There were three members in the group, but one member dropped out at the beginni
 ## Project Structure:
 <br />
 code
+<br />
 ├── main.py<br />
 ├── content.py<br />
 ├── crawler.py<br />
