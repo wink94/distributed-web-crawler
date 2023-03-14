@@ -13,7 +13,8 @@ The Distributed Web Crawler is a Python project that allows users to crawl and s
 There were three members in the group, but one member dropped out at the beginning.
 
 <br />
-## Project Structure:
+Project Structure:
+<br />
 <br />
 ├── main.py<br />
 ├── content.py<br />
