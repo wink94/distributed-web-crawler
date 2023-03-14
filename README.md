@@ -57,7 +57,7 @@ To run the program, open a terminal window, navigate to the project directory, a
 
 `python app.py
 `
-<br /><br />Note that the Prometheus server will be running on port 9000. You can access the Prometheus dashboard by visiting http://localhost:9000/health in your web browser. The dashboard will show you health information about every node.
+<br /><br />
 
 ## main.py
 This is the main module of the project which serves as the entry point to the application. It contains a loop that waits for user input to either crawl, make a graph, show html, or exit the program.
