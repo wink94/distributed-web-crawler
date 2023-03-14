@@ -55,8 +55,7 @@ To run the distributed web crawler, you need to run the main.py file. The progra
 To run the program, open a terminal window, navigate to the project directory, and run the following command (Remeber to be in top level and not in code directory):
 <br />
 
-<br />
-### python code/main.py
+### `python code/main.py`
 <br />
 
 ## main.py
