@@ -56,7 +56,7 @@ To run the program, open a terminal window, navigate to the project directory, a
 <br />
 
 <br />
-`python code/main.py`
+### `python code/main.py`
 <br />
 
 ## main.py
