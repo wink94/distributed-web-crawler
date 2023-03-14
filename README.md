@@ -23,7 +23,7 @@ code
 ├── storage/<br />
 └── util.py<br />
 <br />
-<br />
+
 `main.py`: The main script for the project and this work as master node. This script allows the user to interact with the command-line interface and choose between scraping or crawling.<br />
 `content.py`: A module that contains a function to check if a file exists and print its content.<br />
 `crawler.py`: A module that contains functions for crawling a website.<br />
